@@ -56,6 +56,45 @@ class Pair<K, V> {
 }
 
 
+Solution : 2
+
+    
+import java.util.Scanner;
+
+public class MinMax {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Number of values you are going to enter here dudeee:");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        System.out.print("Enter the list of value dudeeee:");
+        for(int i=0; i<arr.length; i++){
+            arr[i] = sc.nextInt();
+        }
+
+        int[] result = find(arr);
+        System.out.println(result[0]);
+        System.out.println(result[1]);
+    }
+
+
+    public static int[] find(int[] arr){
+        int smallest = Integer.MAX_VALUE;
+        int largest = Integer.MIN_VALUE;
+
+        for(int i=0; i<arr.length; i++){
+            if(arr[i] > largest){
+                largest = arr[i];
+            }
+            else{
+                smallest = arr[i];
+            }
+        }
+        return new int[] {smallest,largest};
+    }
+}
+
+
 
 
 
