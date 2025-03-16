@@ -1,6 +1,6 @@
 Problem link : https://www.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card
 
-Solution 1:
+Logic 1:
 
 //import javafx.util.Pair; 
 public class MinMax {
@@ -20,8 +20,14 @@ public class MinMax {
 
     //Method
     public static Pair<Integer, Integer> getMinMax(int[] arr){
-        int largest = Integer.MIN_VALUE;
-        int smallest = Integer.MAX_VALUE;
+        // Initializing smallest with the largest possible integer value
+        // so that any number in the array will be smaller than this.
+        //you can also assign with Zero but some edge case fail if having -3 like that
+        int smallest = Integer.MAX_VALUE; // 2147483647
+
+        // Initializing largest with the smallest possible integer value
+        // so that any number in the array will be larger than this.
+        int largest = Integer.MIN_VALUE; // -2147483648
 
         for(int i=0; i<arr.length; i++){
             if(arr[i] > largest){
@@ -56,7 +62,7 @@ class Pair<K, V> {
 }
 
 
-Solution : 2
+Logic : 2
 
     
 import java.util.Scanner;
@@ -93,6 +99,22 @@ public class MinMax {
         return new int[] {smallest,largest};
     }
 }
+
+
+
+Logic 3:
+
+import java.util.*;
+public class MinMax {
+    public static void main(String[] args) {
+
+        int[] arr = {4,2,1,9,9,1};
+        Arrays.sort(arr);
+
+        System.out.println(arr[0] + " " + arr[arr.length-1]);
+       
+    } 
+ }
 
 
 
