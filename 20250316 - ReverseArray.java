@@ -38,7 +38,33 @@ Logic 2: Normal loop
     }   
 }
 
+Logic 3:  Using stack
 
+    import java.util.Arrays;
+import java.util.Stack;
+
+public class Reverse {
+
+    public static void main(String[] args) {
+        int[] arr = {3,6,1,9};
+
+        //creating stack
+        Stack<Integer> stack = new Stack<>();
+        //pushing values to stack
+        for(int num : arr){
+            stack.push(num);
+        }
+        //now poping a value -- reverse array you get
+        for(int i=0; i<arr.length; i++){
+            //stack.pop remove the top element and return
+            arr[i] = stack.pop();
+        }
+        //returing the array 
+        //we cannot directly return a array use toString to return an array
+        System.out.println(Arrays.toString(arr));
+     
+    }   
+}
 
 
 
