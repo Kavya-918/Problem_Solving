@@ -25,5 +25,32 @@ Logic 2: Using String Conversion
     
 }
 
+/* debug
+first = 49-48=1
+here 0 ascill value is 48
+last = str.charAt(5-1)-'0'
+      = '5'-'0'
+      = 53-48
+      = 5
+*/
+
+
+Logic 3: using mathematical
+    public class FirstLast {
+    public static void main(String[] args) {
+        
+        int num = 12345;
+        //Using Mathematical
+
+        int last = num%10;
+        int first = num;
+        while(first >= 10){
+            first /= 10;
+        }
+
+        System.out.println(first+last);
+    }
+    
+}
 
 
